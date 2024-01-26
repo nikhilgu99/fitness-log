@@ -2,17 +2,8 @@
 
 <div class="container-fluid exercise-items">
   <div class="row col-8 mx-auto">
-    <div class="col-md-4 col-sm-6">
-      <exercise-item></exercise-item>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <exercise-item></exercise-item>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <exercise-item></exercise-item>
-    </div>
-    <div class="col-md-4 col-sm-6">
-      <exercise-item></exercise-item>
+    <div class="col-md-4 col-sm-6" *ngFor="let fitnessItem of fitnessItems">
+      <exercise-item [FitnessInfo]="fitnessItem"></exercise-item>
     </div>
   </div>
 </div>
