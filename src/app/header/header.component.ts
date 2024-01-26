@@ -14,7 +14,7 @@ export class HeaderComponent {
     private modalService: NgbModal
   ) { }
 
-  public openModal() {
+  public openNewEntryModal() {
     const modalRef = this.modalService.open(NewEntryModalComponent);
   }
 }
