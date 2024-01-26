@@ -3,7 +3,7 @@
 <div class="container-fluid exercise-items">
   <div class="row col-8 mx-auto">
     <div class="col-md-4 col-sm-6" *ngFor="let fitnessItem of fitnessItems">
-      <exercise-item [FitnessInfo]="fitnessItem"></exercise-item>
+      <exercise-item [FitnessInfo]="fitnessItem" (deleteEntryEmitter)="deleteEntry($event)"></exercise-item>
     </div>
   </div>
 </div>

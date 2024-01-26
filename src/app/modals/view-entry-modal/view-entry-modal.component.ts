@@ -11,13 +11,13 @@ import { FitnessItem } from '../../interfaces/fitness-item';
 export class ViewEntryModalComponent {
   @Input() public fitnessItem!: FitnessItem;
 
-  @Output() public closeModal: EventEmitter<any> = new EventEmitter();
+  @Output() public closeModalEmitter: EventEmitter<string> = new EventEmitter();
 
   ngOnInit() {
     console.log(this.fitnessItem);
   }
 
-  close(deleteEntry: boolean) {
-    this.closeModal.emit(deleteEntry);
+  public close(deleteEntry: boolean) { //TODO: Check bool and implement edit
+    this.closeModalEmitter.emit(this.fitnessItem.name);
   }
 }

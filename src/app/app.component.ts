@@ -13,7 +13,7 @@ import { FitnessItem } from './interfaces/fitness-item';
     imports: [NgFor, RouterOutlet, HeaderComponent, ExerciseItemComponent]
 })
 export class AppComponent {
-    public fitnessItems: FitnessItem[] = [
+    public fitnessItems: FitnessItem[] = [ //Mock entries
         {
             description: "Ran 2 miles in 20 minutes",
             name: "Running"
@@ -31,4 +31,8 @@ export class AppComponent {
             name: "Plank"
         },
     ];
+
+    public deleteEntry(name: string) {
+        this.fitnessItems = this.fitnessItems.filter( item => item.name !== name);
+    }
 }
