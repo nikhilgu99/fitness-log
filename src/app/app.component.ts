@@ -32,6 +32,10 @@ export class AppComponent {
         },
     ];
 
+    public addEntry(entry: FitnessItem) {
+        this.fitnessItems.push(entry);
+    }
+
     public deleteEntry(name: string) {
         this.fitnessItems = this.fitnessItems.filter( item => item.name !== name);
     }
