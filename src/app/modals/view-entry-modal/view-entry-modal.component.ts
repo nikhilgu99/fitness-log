@@ -17,7 +17,7 @@ export class ViewEntryModalComponent {
     console.log(this.fitnessItem);
   }
 
-  public close(deleteEntry: boolean) { //TODO: Check bool and implement edit
+  public close() {
     this.closeModalEmitter.emit(this.fitnessItem.name);
   }
 }

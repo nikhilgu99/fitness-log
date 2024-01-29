@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {NgFor} from '@angular/common';
+import { NgFor } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { ExerciseItemComponent } from "./exercise-item/exercise-item.component";
@@ -32,8 +32,15 @@ export class AppComponent {
         },
     ];
 
+    addSuccess: boolean | undefined = undefined;
+
     public addEntry(entry: FitnessItem) {
-        this.fitnessItems.push(entry);
+        if (this.fitnessItems.filter( item => item.name == entry.name).length == 0) { //Check for duplicate
+            this.fitnessItems.push(entry);
+            this.addSuccess = true;
+        } else {
+            this.addSuccess = false;
+        }
     }
 
     public deleteEntry(name: string) {

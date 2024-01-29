@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ViewEntryModalComponent } from '../modals/view-entry-modal/view-entry-modal.component';
 import { FitnessItem } from '../interfaces/fitness-item';
@@ -19,16 +19,10 @@ export class ExerciseItemComponent {
 
   @Output() public deleteEntryEmitter: EventEmitter<string> = new EventEmitter();
 
-  @ViewChild('exerciseItemTitle')
-  exerciseItemTitle!: ElementRef;
-
-  @ViewChild('exerciseItemDescription')
-  exerciseItemDescription!: ElementRef;
-
   public openViewEntryModal() {
     const fitnessItem: FitnessItem = {
-      description: this.exerciseItemDescription.nativeElement.innerText,
-      name: this.exerciseItemTitle.nativeElement.innerText
+      description: this.FitnessInfo.description,
+      name: this.FitnessInfo.name
     };
 
     const modalRef = this.modalService.open(ViewEntryModalComponent);
